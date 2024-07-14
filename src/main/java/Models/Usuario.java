@@ -1,13 +1,13 @@
 package Models;
 
 public class Usuario {
-    private int id;
+    private Integer id;
     private String nome;
     private String email;
     private String senha;
     private boolean estaAtivo;
 
-    public Usuario(int id, String nome, String email, String senha) {
+    public Usuario(Integer id, String nome, String email, String senha) {
         this.id = id;
         this.nome = nome;
         this.email = email;
@@ -15,11 +15,19 @@ public class Usuario {
         this.estaAtivo = true;
     }
 
-    public int getId() {
+    public Usuario(Usuario u) {
+        this.id = u.id;
+        this.nome = u.nome;
+        this.email = u.email;
+        this.senha = u.senha;
+        this.estaAtivo = u.estaAtivo;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -51,7 +59,11 @@ public class Usuario {
         return estaAtivo;
     }
 
-    public void setEstaAtivo(boolean estaAtivo) {
-        this.estaAtivo = estaAtivo;
+    public void setEstaAtivo() {
+        if (this.estaAtivo) {
+            this.estaAtivo = false;
+        } else {
+            this.estaAtivo = true;
+        }
     }
 }

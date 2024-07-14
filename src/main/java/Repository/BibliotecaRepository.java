@@ -28,9 +28,9 @@ public class BibliotecaRepository {
         return livros;
     }
 
-    public Livro obterLivroPorId(int id) {
+    public Livro obterLivroPorId(Integer id) {
         for (Livro l : livros) {
-            if (l.getId() == id) {
+            if (l.getId().equals(id)) {
                 return l;
             }
         }
@@ -47,9 +47,9 @@ public class BibliotecaRepository {
         return usuarios;
     }
 
-    public Usuario obterUsuarioPorId(int id) {
+    public Usuario obterUsuarioPorId(Integer id) {
         for (Usuario u : usuarios) {
-            if (u.getId() == id) {
+            if (u.getId().equals(id)) {
                 return u;
             }
         }
@@ -63,7 +63,7 @@ public class BibliotecaRepository {
         emprestimos.add(emprestimo);
     }
 
-    public List<Emprestimo> obterEmprestimo() {
+    public List<Emprestimo> obterEmprestimos() {
         return emprestimos;
     }
 

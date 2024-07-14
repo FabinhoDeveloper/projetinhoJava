@@ -1,13 +1,13 @@
 package Models;
 
 public class Livro {
-    private int id;
+    private Integer id;
     private String titulo;
     private String autor;
-    private Long isbn;
+    private Integer isbn;
     private Integer numeroCopias;
 
-    public Livro(int id, String titulo, String autor, Long isbn, Integer numeroCopias) {
+    public Livro(Integer id, String titulo, String autor, Integer isbn, Integer numeroCopias) {
         this.id = id;
         this.titulo = titulo;
         this.autor = autor;
@@ -15,11 +15,19 @@ public class Livro {
         this.numeroCopias = numeroCopias;
     }
 
-    public int getId() {
+    public Livro (Livro l) {
+        this.id = l.id;
+        this.titulo = l.titulo;
+        this.autor = l.autor;
+        this.isbn = l.isbn;
+        this.numeroCopias = l.numeroCopias;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -39,11 +47,11 @@ public class Livro {
         this.autor = autor;
     }
 
-    public Long getIsbn() {
+    public Integer getIsbn() {
         return isbn;
     }
 
-    public void setIsbn(Long isbn) {
+    public void setIsbn(Integer isbn) {
         this.isbn = isbn;
     }
 
