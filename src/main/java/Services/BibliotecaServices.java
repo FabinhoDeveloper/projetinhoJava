@@ -14,6 +14,7 @@ public class BibliotecaServices {
 
     public void inserirUsuario (int id, String nome, String email, String senha) {
         repositorio.inserirUsuario(new Usuario(id, nome, email, senha));
+        System.out.println("Usuário inserido com sucesso!");
     }
 
     public void vizualizarUsuarios () {
@@ -25,7 +26,8 @@ public class BibliotecaServices {
         }
 
         for (Usuario u : listaDeUsuarios) {
-            System.out.println("Nome do usuário: " + u.getNome() + "\nE-mail: " + u.getEmail());
+            System.out.println("===================================");
+            System.out.println("Nome do usuário: " + u.getNome() + "\nE-mail: " + u.getEmail()  + "\nEstá ativo: " + u.isEstaAtivo());
         }
     }
 
@@ -33,7 +35,7 @@ public class BibliotecaServices {
         Usuario usuario = repositorio.obterUsuarioPorId(id);
 
         if (usuario != null) {
-            System.out.println("Usuário: " + usuario.getNome() + "\nEmail: " + usuario.getEmail());
+            System.out.println("Usuário: " + usuario.getNome() + "\nEmail: " + usuario.getEmail() + "\nEstá ativo: " + usuario.isEstaAtivo());
         } else {
             System.out.println("Usuário não encontrado!");
         }
@@ -52,6 +54,7 @@ public class BibliotecaServices {
     public void inserirLivro(Integer id, String titulo, String autor, Integer isbn, Integer numeroCopias) {
         Livro livro = new Livro(id, titulo, autor, isbn, numeroCopias);
         repositorio.inserirLivro(livro);
+        System.out.println("Livro inserido com sucesso!");
     }
 
     public void vizualizarTodosOsLivros () {
@@ -63,7 +66,8 @@ public class BibliotecaServices {
         }
 
         for (Livro l : listaDeLivros) {
-            System.out.println("Livro: " + l.getTitulo() + "\nAutor: " + l.getAutor());
+            System.out.println("===================================");
+            System.out.println("Livro: " + l.getTitulo() + "\nAutor: " + l.getAutor() + "\nCópias disponíveis: " + l.getNumeroCopias());
         }
 
     }
@@ -137,6 +141,7 @@ public class BibliotecaServices {
         }
 
         for (Emprestimo e : listaDeEmprestimos) {
+            System.out.println("===================================");
             System.out.println("Livro emprestado: " + e.getLivro().getTitulo() + "\nUsuário: " + e.getUsuario().getNome());
         }
     }
